@@ -99,6 +99,8 @@ select {
     --text-xxxxl: 3rem;
     --text-sans: "Barlow", sans-serif;
     --sombra-1: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    --sombra-2: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    ;
 }
 
 .text-1,
@@ -341,6 +343,7 @@ button.btn:hover {
 
 #brochure-home #hero img.floating {
     position: absolute;
+    max-height: 50vh;
     left: 0;
     bottom: -50%;
     width: 50%;
@@ -358,11 +361,13 @@ button.btn:hover {
     color: #fff;
 }
 
-.swiperFlotaNav {
+.swiperFlotaNav,
+.swiperSustNav {
     margin-bottom: 2rem;
 }
 
-.swiperFlotaNav button {
+.swiperFlotaNav button,
+.swiperSustNav button {
     border: none;
     background: none;
     text-transform: uppercase;
@@ -372,7 +377,7 @@ button.btn:hover {
     font-size: var(--text-m);
     width: 100%;
     border-bottom: solid 3px var(--color-2);
-    text-align: center;
+    text-align: left;
     padding-bottom: 1rem;
     opacity: .5;
     transition: all .2s ease;
@@ -383,7 +388,9 @@ button.btn:hover {
 }
 
 .swiperFlotaNav .swiper-slide-thumb-active button,
-.swiperFlotaNav .swiper-slide:hover button {
+.swiperFlotaNav .swiper-slide:hover button,
+.swiperSustNav .swiper-slide-thumb-active button,
+.swiperSustNav .swiper-slide:hover button {
     opacity: 1;
 }
 
@@ -393,7 +400,6 @@ section#flota {
 
 .swiperFlota .swiper-slide {
     aspect-ratio: 16/9;
-    position: relative;
 
 }
 
@@ -408,7 +414,7 @@ section#flota {
     background: linear-gradient(4deg, rgba(0, 142, 187, 0.5410539215686274) 21%, rgba(0, 142, 187, 0) 46%);
 }
 
-.swiperFlota .swiper-slide .container {
+.swiperFlota .swiper-slide .container{
     height: 100%;
     padding: 3rem 4rem;
     position: relative;
@@ -434,7 +440,8 @@ section#flota {
     z-index: 2;
 }
 
-.swiperFlota h3 {
+.swiperFlota h3,
+.swiperSust h3 {
     font-weight: 400;
     margin-bottom: 1rem;
     font-size: var(--text-xxl);
@@ -450,6 +457,11 @@ section#flota {
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
 }
+
+.swiperSust .swiper-slide .content {
+    position: relative;
+}
+
 
 .swiperFlota .ficha p {
     text-transform: uppercase;
@@ -493,13 +505,15 @@ section#banner-distrito {
     width: 100%;
     height: auto;
     color: #fff;
+    overflow: hidden;
 }
 
 section#banner-distrito img {
     position: absolute;
-    inset: 0;
+top: -10%;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
     object-fit: cover;
     object-position: bottom;
     z-index: 0;
@@ -523,19 +537,65 @@ section#cards {
 .card {
     box-shadow: var(--sombra-1);
     border: solid 1px #f4f4f4;
+    cursor: pointer;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.card .text img {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.card:hover .text img {
+    transform: translateX(.5rem);
+    -webkit-transform: translateX(.5rem);
+    -moz-transform: translateX(.5rem);
+    -ms-transform: translateX(.5rem);
+    -o-transform: translateX(.5rem);
+}
+
+.card-1 {
+    overflow: hidden;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 
 .card-1 figure {
     aspect-ratio: 4/3;
+    position: relative;
 }
 
 .card-1 figure img {
     width: 100%;
     height: 100%;
+    position: relative;
+    z-index: 1;
     object-fit: cover;
 }
 
+.card-1 figure:before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 7.98%, rgba(0, 0, 0, 0) 41.38%), url(tostadero04);
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+}
+
 .card-1 .text {
+    z-index: 3;
     position: absolute;
     bottom: 1.5rem;
     left: 1rem;
@@ -554,7 +614,6 @@ section#cards {
 
 .card-3 {
     position: relative;
-    background-color: red;
     height: 7rem;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -563,14 +622,31 @@ section#cards {
     -o-border-radius: 1rem;
     overflow: hidden;
     border: none;
+
 }
 
-.card-3>img {
+.card-3 figure {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+}
+
+.card-3 figure:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #00000043;
+}
+
+.card-3 figure img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    z-index: 1;
     object-position: center;
 }
 
@@ -582,6 +658,7 @@ section#cards {
     height: 100%;
     display: flex;
     align-items: center;
+    z-index: 3;
     justify-content: space-between;
 }
 
@@ -615,6 +692,39 @@ section#cards {
     color: var(--color-1);
     font-weight: 500;
     font-size: var(--text-ml);
+}
+
+.modal-cards .modal-dialog {
+    max-width: 95%;
+    width: 1200px;
+}
+
+.modal-cards .modal-header {
+    border-bottom: none;
+    padding: 0;
+    position: relative;
+}
+
+
+.modal-cards .row>* {
+    position: relative;
+}
+
+.modal-body button.btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal-cards p.titulo {
+    color: var(--color-1);
+    font-size: var(--text-xl);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.modal-cards p {
+    margin-bottom: .25rem;
 }
 
 section#futuro .box {
@@ -658,6 +768,22 @@ footer#footer-main .container {
 @media (min-width: 1031px) {}
 
 @media (max-width: 1030px) {
+
+    :root {
+   
+        --text-xs: 0.6rem;
+        --text-s: 0.7rem;
+        --text-r: .9rem;
+        --text-rm: 1rem;
+        --text-m: 1.1rem;
+        --text-ml: 1.2rem;
+        --text-l: 1.3rem;
+        --text-xl: 1.6rem;
+        --text-xxl: 1.8rem;
+        --text-xxxl: 2rem;
+        --text-xxxxl: 2.2rem;
+        ;
+    }
     .box#buque-electrico {
         flex-direction: column;
     }
