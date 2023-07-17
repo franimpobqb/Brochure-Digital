@@ -93,16 +93,10 @@
                     </div>
                     <div class="offset-md-5 col-md-5">
                         <p class="mb-2">Hace más de cuarenta años, la ONU celebró la “Cumbre de la Tierra”, en
-                            Estocolmo. Poco
-                            después, el Club de
-                            Roma difundía un documento titulado los “Límites del
-                            Crecimiento”. </p>
-                        <p class="mb-2"> Desde entonces, sin solución de continuidad, se han sucedido conferencias,
-                            congresos,
-                            simposios, convenciones,
+                            Estocolmo. Poco después, el Club de Roma difundía un documento titulado los “Límites del Crecimiento”. </p>
+                        <p class="mb-2"> Desde entonces, sin solución de continuidad, se han sucedido conferencias, congresos, simposios, convenciones,
                             reuniones y seminarios de toda índole, los cuales han emitido toneladas de documentos,
-                            informes y papers, para
-                            crear conciencia acerca de la degradación de la biósfera
+                            informes y papers, para crear conciencia acerca de la degradación de la biósfera
                             como consecuencia de las actividades humanas.
                         </p>
                         <p class="mb-2">
@@ -154,7 +148,13 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="container">
-                            <figure><img src="images/francisco-1.webp" loading="lazy" /></figure>
+                            <figure><img src="images/francisco-1.webp" loading="lazy" />
+                                <div class="navigation">
+                                    <div class="swiper-button-next flota-button-next"></div>
+                                    <div class="swiper-button-prev flota-button-prev"></div>
+                                </div>
+                            
+                            </figure>
                             <div class="row">
                                 <div class="col-12">
                                     <h3>Francisco Papa</h3>
@@ -179,10 +179,17 @@
                                 </div>
                             </div>
                         </div>
+                       
+                     
                     </div>
                     <div class="swiper-slide">
                         <div class="container">
                             <figure><img src="images/atlantic-1.webp" loading="lazy" />
+                                <div class="navigation">
+                                    <div class="swiper-button-next flota-button-next"></div>
+                                    <div class="swiper-button-prev flota-button-prev"></div>
+                                </div>
+                            </figure>
                                 <div class="row">
                                     <div class="col-12">
                                         <h3>Atlantic III</h3>
@@ -203,14 +210,18 @@
                                         <p>Autos: 135</p>
                                     </div>
                                 </div>
-                            </figure>
 
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="container">
                             <figure><img src="images/silvia-ana-2.webp" loading="lazy"
-                                    alt="Barco Silvia Ana L de Buquebus" /></figure>
+                                    alt="Barco Silvia Ana L de Buquebus" />
+                                    <div class="navigation">
+                                        <div class="swiper-button-next flota-button-next"></div>
+                                        <div class="swiper-button-prev flota-button-prev"></div>
+                                    </div>
+                                </figure>
                             <div class="row">
                                 <div class="col-12">
                                     <h3>Silvia Ana L</h3>
@@ -489,7 +500,7 @@
         <section id="cards">
             <div class="container  pt-4 pb-4">
                 <div class="swiper swiperCards1">
-                    <div class="swiper-wrapper" data-lg-reveal="layer-to-right" data-lg-reveal-stagger="0.5">
+                    <div class="swiper-wrapper"  data-lg-reveal="fade-to-top">
                         <div class="swiper-slide">
                             <div class="card card-1" data-bs-toggle="modal" data-bs-target="#modalCafe">
                                 <figure><img src="images/tostadero04.webp" alt="" loading="lazy"></figure>
@@ -527,7 +538,7 @@
 
             <div class="container pt-4 pb-4">
                 <div class="swiper swiperCards2">
-                    <div class="swiper-wrapper" data-lg-reveal="layer-to-right" data-lg-reveal-stagger="0.5">
+                    <div class="swiper-wrapper"  data-lg-reveal="fade-to-top">
                         <div class="swiper-slide">
                             <div class="card card-3" data-bs-toggle="modal" data-bs-target="#modalConfiabilidad">
                                 <figure><img src="images/iStock_000059733822_XXXLarge.webp" alt="" loading="lazy">
@@ -557,7 +568,7 @@
 
             <div class="container  pt-4 pb-4">
                 <div class="swiper swiperCards3">
-                    <div class="swiper-wrapper" data-lg-reveal="layer-to-right" data-lg-reveal-stagger="0.5">
+                    <div class="swiper-wrapper"  data-lg-reveal="fade-to-top">
                         <div class="swiper-slide">
                             <div class="card card-2" data-bs-toggle="modal" data-bs-target="#modalTurismo">
                                 <figure>
@@ -610,7 +621,7 @@
             </div>
             <div class="container  pt-4 pb-4">
                 <div class="swiper swiperCards4">
-                    <div class="swiper-wrapper" data-lg-reveal="layer-to-right" data-lg-reveal-stagger="0.5">
+                    <div class="swiper-wrapper"  data-lg-reveal="fade-to-top">
                         <div class="swiper-slide">
                             <div class="card card-2" data-bs-toggle="modal" data-bs-target="#modalEducacion">
                                 <figure>
@@ -1233,8 +1244,8 @@ Norte.
             slidesPerView: 1,
             centeredSlides: true,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".flota-button-next",
+                prevEl: ".flota-button-prev",
             },
             thumbs: {
                 swiper: swiperFlotaNav,

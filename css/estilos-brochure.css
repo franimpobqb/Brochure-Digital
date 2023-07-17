@@ -796,6 +796,36 @@ footer#footer-main .container {
     .box#buque-electrico .text {
         padding: 2rem 2rem;
     }
+
+    .swiperFlota .swiper-slide .container {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .swiperFlota .swiper-slide img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        aspect-ratio: 16/9;
+        inset: inherit;
+    }
+
+    .swiperFlota .swiper-slide {
+        aspect-ratio: auto;
+    }
+    .swiperFlota .swiper-slide figure:after {
+        content: none;
+    }
+    .swiperFlota .swiper-slide .row {
+        padding: 1rem;
+        background-color: var(--color-1);
+    }
+
+    .swiperFlota .ficha {
+        margin-top: 1rem;
+        column-count: 2;
+    }
 }
 
 
