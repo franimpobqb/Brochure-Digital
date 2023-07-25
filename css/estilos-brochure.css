@@ -272,6 +272,8 @@ button.btn {
     -moz-border-radius: 2rem;
     -ms-border-radius: 2rem;
     -o-border-radius: 2rem;
+    box-shadow: inset 0px 0px 0px 0.1rem var(--color-2);
+    border: none;
 }
 
 button.btn:hover {
@@ -359,15 +361,47 @@ button.btn:hover {
 
 #hero .bottom a {
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#hero .bottom a div {
+    border: solid 1px #fff;
+    margin-left: .5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all .2s ease;
+    animation: pulse-animation 2s infinite;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
 }
 
+#hero .bottom a:hover div {
+    transform: translateX(.5rem);
+    -webkit-transform: translateX(.5rem);
+    -moz-transform: translateX(.5rem);
+    -ms-transform: translateX(.5rem);
+    -o-transform: translateX(.5rem);
+}
+.pulse {
+
+  }
+  
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+  }
 .swiperFlotaNav,
 .swiperSustNav {
-    margin-bottom: 2rem;
-}
-
-.swiperFlotaNav button,
-.swiperSustNav button {
     border: none;
     background: none;
     text-transform: uppercase;
@@ -378,6 +412,7 @@ button.btn:hover {
     width: 100%;
     border-bottom: solid 3px var(--color-2);
     text-align: left;
+    margin-bottom: 2rem;
     padding-bottom: 1rem;
     opacity: .5;
     transition: all .2s ease;
@@ -387,10 +422,18 @@ button.btn:hover {
     -o-transition: all .2s ease;
 }
 
-.swiperFlotaNav .swiper-slide-thumb-active button,
-.swiperFlotaNav .swiper-slide:hover button,
-.swiperSustNav .swiper-slide-thumb-active button,
-.swiperSustNav .swiper-slide:hover button {
+.swiperFlotaNav.swiper-slide,
+.swiperSustNav .swiper-slide {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+    color: var(--color-1);
+}
+
+.swiperFlotaNav .swiper-slide-thumb-active,
+.swiperFlotaNav .swiper-slide:hover,
+.swiperSustNav .swiper-slide-thumb-active,
+.swiperSustNav .swiper-slide:hover {
     opacity: 1;
 }
 
@@ -414,7 +457,7 @@ section#flota {
     background: linear-gradient(4deg, rgba(0, 142, 187, 0.5410539215686274) 21%, rgba(0, 142, 187, 0) 46%);
 }
 
-.swiperFlota .swiper-slide .container{
+.swiperFlota .swiper-slide .container {
     height: 100%;
     padding: 3rem 4rem;
     position: relative;
@@ -510,7 +553,7 @@ section#banner-distrito {
 
 section#banner-distrito img {
     position: absolute;
-top: -10%;
+    top: -10%;
     left: 0;
     width: 100%;
     height: 120%;
@@ -765,12 +808,197 @@ footer#footer-main .container {
     font-size: var(--text-rm);
 }
 
-@media (min-width: 1031px) {}
+.box {
+    background-color: var(--color-1);
+    color: #fff;
+    padding: 3rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    box-shadow: var(--sombra-1);
+}
+
+.box .item {
+    border-right: solid 1px var(--color-2);
+}
+
+
+.box .numero {
+    font-size: var(--text-xxxl);
+    text-align: center;
+    color: #fff;
+}
+
+.box .titulo {
+    text-transform: uppercase;
+    letter-spacing: .14rem;
+    font-weight: 500;
+    font-size: var(--text-ml);
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.box .texto {
+    color: #fff;
+    text-align: center;
+}
+
+.header-inner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.header-inner img {
+    position: absolute;
+
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header-inner h1 {
+    color: var(--color-5);
+    font-size: var(--text-m);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.header-inner h2 {
+    color: var(--color-1);
+    font-size: var(--text-xxxl);
+    font-weight: 300;
+    margin-bottom: 5rem;
+    max-width: 1000px;
+}
+
+/* LANDING FRANCISCO */
+
+
+#brochure-francisco #hero {
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #fff;
+}
+
+#brochure-francisco #hero video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#brochure-francisco #hero:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(4deg, rgba(2, 0, 36, 0.3253676470588235) 36%, rgba(0, 0, 0, 0) 100%);
+
+}
+
+#brochure-francisco #hero .container {
+    z-index: 3;
+}
+
+#brochure-francisco #hero h1 {
+    font-size: var(--text-m);
+    letter-spacing: .1rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+#brochure-francisco #hero h2 {
+    font-size: var(--text-xxxl);
+    font-weight: 300;
+    margin-bottom: 5rem;
+    max-width: 1000px;
+}
+
+#brochure-francisco #paseo360 .box {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#brochure-francisco ul.caracteristicas {
+    color: var(--color-1);
+    font-size: var(--text-ml);
+    list-style: none;
+}
+
+
+#brochure-francisco ul.caracteristicas li {
+    margin-bottom: 2rem;
+}
+
+#brochure-francisco #secciones {
+    background-color: var(--color-5);
+    color: #fff;
+}
+
+#brochure-francisco #secciones .container {
+    position: relative;
+    z-index: 4;
+}
+
+#brochure-francisco #secciones:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+
+}
+
+#brochure-francisco #secciones:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background-color: #fff;
+
+}
+
+/* BUQUE ELECTRICO */
+
+#brochure-electrico #cifras .box {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+/* DISTRITO BUQUEBUS */
+
+@media (min-width: 1031px) {
+    .mobile {
+        display: none;
+    }
+}
 
 @media (max-width: 1030px) {
 
+
     :root {
-   
+
         --text-xs: 0.6rem;
         --text-s: 0.7rem;
         --text-r: .9rem;
@@ -784,6 +1012,11 @@ footer#footer-main .container {
         --text-xxxxl: 2.2rem;
         ;
     }
+
+    .desktop {
+        display: none;
+    }
+
     .box#buque-electrico {
         flex-direction: column;
     }
@@ -814,9 +1047,11 @@ footer#footer-main .container {
     .swiperFlota .swiper-slide {
         aspect-ratio: auto;
     }
+
     .swiperFlota .swiper-slide figure:after {
         content: none;
     }
+
     .swiperFlota .swiper-slide .row {
         padding: 1rem;
         background-color: var(--color-1);
@@ -825,6 +1060,43 @@ footer#footer-main .container {
     .swiperFlota .ficha {
         margin-top: 1rem;
         column-count: 2;
+    }
+
+    section.header-inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.header-inner {
+        padding-bottom: 0;
+        height: auto;
+    }
+
+    .header-inner h1 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .header-inner h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .header-inner img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 3rem;
+    }
+
+    .box .titulo {
+        margin-bottom: .75rem;
+    }
+
+    .box .item {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-right: 0;
+        border-bottom: solid 1px var(--color-2);
     }
 }
 
