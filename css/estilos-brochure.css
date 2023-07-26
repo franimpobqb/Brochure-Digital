@@ -208,6 +208,9 @@ h6,
 
 }
 
+p strong {
+    font-weight: 500;
+}
 strong {
     font-weight: 600;
 }
@@ -410,11 +413,9 @@ button.btn:hover {
     letter-spacing: .1rem;
     font-size: var(--text-m);
     width: 100%;
-    border-bottom: solid 3px var(--color-2);
     text-align: left;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    opacity: .5;
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
     -moz-transition: all .2s ease;
@@ -422,11 +423,13 @@ button.btn:hover {
     -o-transition: all .2s ease;
 }
 
-.swiperFlotaNav.swiper-slide,
+.swiperFlotaNav .swiper-slide,
 .swiperSustNav .swiper-slide {
     padding-top: 1rem;
     padding-bottom: 1rem;
     cursor: pointer;
+    opacity: .5;
+    border-bottom: solid 3px var(--color-2);
     color: var(--color-1);
 }
 
@@ -437,6 +440,18 @@ button.btn:hover {
     opacity: 1;
 }
 
+.swiper-button-prev,
+ .swiper-button-next {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.swiperFlota .swiper-button-prev {
+    background-image: url(../images/chevron-left-white.svg);
+}
+.swiperFlota .swiper-button-next {
+    background-image: url(../images/chevron-right-white.svg);
+}
 section#flota {
     background-color: var(--color-6);
 }
@@ -456,7 +471,21 @@ section#flota {
     background: rgb(0, 142, 187);
     background: linear-gradient(4deg, rgba(0, 142, 187, 0.5410539215686274) 21%, rgba(0, 142, 187, 0) 46%);
 }
-
+.swiperFlota .ficha {
+    padding: .75rem;
+    background-color: #0000005e;
+    border: solid 1px #ffffff3a;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+.swiperFlota .ficha p {
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    margin-bottom: .2rem;
+}
 .swiperFlota .swiper-slide .container {
     height: 100%;
     padding: 3rem 4rem;
@@ -490,26 +519,33 @@ section#flota {
     font-size: var(--text-xxl);
 }
 
-.swiperFlota .ficha {
-    padding: .75rem;
-    background-color: #0000005e;
-    border: solid 1px #ffffff3a;
-    border-radius: .5rem;
-    -webkit-border-radius: .5rem;
-    -moz-border-radius: .5rem;
-    -ms-border-radius: .5rem;
-    -o-border-radius: .5rem;
-}
+
 
 .swiperSust .swiper-slide .content {
     position: relative;
 }
+.swiperSust .swiper-slide figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
 
 
-.swiperFlota .ficha p {
-    text-transform: uppercase;
-    letter-spacing: .05rem;
-    margin-bottom: .2rem;
+#sustentable .navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+}
+#sustentable .swiper-button-prev {
+    position: relative;
+    background-image: url(../images/chevron-left.svg);
+}
+#sustentable .swiper-button-next {
+    position: relative;
+    background-image: url(../images/chevron-right.svg);
 }
 
 .box#buque-electrico {
@@ -517,7 +553,11 @@ section#flota {
     color: #fff;
     display: flex;
     box-shadow: var(--sombra-1);
-
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
 }
 
 .box#buque-electrico .text {
@@ -551,6 +591,16 @@ section#banner-distrito {
     overflow: hidden;
 }
 
+section#download-brochure {
+    min-height: 30rem;
+    width: 100%;
+    height: auto;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
 section#banner-distrito img {
     position: absolute;
     top: -10%;
@@ -562,15 +612,36 @@ section#banner-distrito img {
     z-index: 0;
 }
 
-section#banner-distrito .container {
+section#download-brochure img {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+section#banner-distrito .container,
+section#download-brochure .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 section#cards {
+    padding-bottom: 0;
     background-color: var(--color-6);
 }
-
+section#cards:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    background-color: #fff;
+}
 .swiperCards3 .swiper-slide,
 .swiperCards4 .swiper-slide {
     height: auto;
@@ -771,8 +842,12 @@ section#cards {
 }
 
 section#futuro .box {
-    background-color: #A9DEAB;
+background-image: url(../images/bg-futuro.svg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
     padding: 5rem 3rem;
+    color: #333;
     border-radius: 2rem;
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
@@ -934,9 +1009,28 @@ footer#footer-main .container {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+#brochure-francisco section#caracteristicas {
+    min-height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#brochure-francisco section#caracteristicas:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+        z-index: 2;
+    background-color: rgba(0, 0, 0, 0.25);
+}
 
-#brochure-francisco ul.caracteristicas {
-    color: var(--color-1);
+section#caracteristicas .container {
+    position: relative;
+    z-index: 3;
+}
+#brochure-francisco #caracteristicas ul {
+    color: #fff;
     font-size: var(--text-ml);
     list-style: none;
 }
@@ -944,6 +1038,22 @@ footer#footer-main .container {
 
 #brochure-francisco ul.caracteristicas li {
     margin-bottom: 2rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+
+#brochure-francisco ul.caracteristicas li:before {
+    content: "";
+    position: absolute;
+    left: -1rem;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    background-image: url(../images/icon-hoja.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #brochure-francisco #secciones {
@@ -956,16 +1066,7 @@ footer#footer-main .container {
     z-index: 4;
 }
 
-#brochure-francisco #secciones:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background-color: #fff;
 
-}
 
 #brochure-francisco #secciones:after {
     content: "";
