@@ -211,6 +211,7 @@ h6,
 p strong {
     font-weight: 500;
 }
+
 strong {
     font-weight: 600;
 }
@@ -309,6 +310,18 @@ button.btn:hover {
     padding-bottom: 0;
 }
 
+#brochure-home section#hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    z-index: 2;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 55%, rgba(255, 255, 255, 0) 100%);
+}
+
 #brochure-home #hero .top {
     position: relative;
     height: 80%;
@@ -325,6 +338,7 @@ button.btn:hover {
 #brochure-home #hero h1 {
     font-size: var(--text-xxxxl);
     font-weight: 300;
+    text-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 #brochure-home #hero .top img {
@@ -368,6 +382,7 @@ button.btn:hover {
     align-items: center;
     justify-content: center;
 }
+
 #hero .bottom a div {
     border: solid 1px #fff;
     margin-left: .5rem;
@@ -391,18 +406,19 @@ button.btn:hover {
     -ms-transform: translateX(.5rem);
     -o-transform: translateX(.5rem);
 }
-.pulse {
 
-  }
-  
-  @keyframes pulse-animation {
+.pulse {}
+
+@keyframes pulse-animation {
     0% {
-      box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.4);
     }
+
     100% {
-      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
     }
-  }
+}
+
 .swiperFlotaNav,
 .swiperSustNav {
     border: none;
@@ -441,17 +457,20 @@ button.btn:hover {
 }
 
 .swiper-button-prev,
- .swiper-button-next {
+.swiper-button-next {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .swiperFlota .swiper-button-prev {
     background-image: url(../images/chevron-left-white.svg);
 }
+
 .swiperFlota .swiper-button-next {
     background-image: url(../images/chevron-right-white.svg);
 }
+
 section#flota {
     background-color: var(--color-6);
 }
@@ -471,6 +490,7 @@ section#flota {
     background: rgb(0, 142, 187);
     background: linear-gradient(4deg, rgba(0, 142, 187, 0.5410539215686274) 21%, rgba(0, 142, 187, 0) 46%);
 }
+
 .swiperFlota .ficha {
     padding: .75rem;
     background-color: #0000005e;
@@ -481,11 +501,13 @@ section#flota {
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
 }
+
 .swiperFlota .ficha p {
     text-transform: uppercase;
     letter-spacing: .05rem;
     margin-bottom: .2rem;
 }
+
 .swiperFlota .swiper-slide .container {
     height: 100%;
     padding: 3rem 4rem;
@@ -524,6 +546,7 @@ section#flota {
 .swiperSust .swiper-slide .content {
     position: relative;
 }
+
 .swiperSust .swiper-slide figure img {
     width: 100%;
     height: 100%;
@@ -539,10 +562,12 @@ section#flota {
     justify-content: flex-start;
     gap: 3rem;
 }
+
 #sustentable .swiper-button-prev {
     position: relative;
     background-image: url(../images/chevron-left.svg);
 }
+
 #sustentable .swiper-button-next {
     position: relative;
     background-image: url(../images/chevron-right.svg);
@@ -633,6 +658,7 @@ section#cards {
     padding-bottom: 0;
     background-color: var(--color-6);
 }
+
 section#cards:after {
     content: "";
     position: absolute;
@@ -642,6 +668,7 @@ section#cards:after {
     height: 15rem;
     background-color: #fff;
 }
+
 .swiperCards3 .swiper-slide,
 .swiperCards4 .swiper-slide {
     height: auto;
@@ -842,10 +869,10 @@ section#cards:after {
 }
 
 section#futuro .box {
-background-image: url(../images/bg-futuro.svg);
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+    background-image: url(../images/bg-futuro.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 5rem 3rem;
     color: #333;
     border-radius: 2rem;
@@ -953,7 +980,27 @@ footer#footer-main .container {
     margin-bottom: 5rem;
     max-width: 1000px;
 }
-
+/* LANDING DISTRITO */
+#brochure-distrito #separador,
+#brochure-electrico #separador {
+    min-height: 40rem;
+}
+#brochure-distrito #separador img,
+#brochure-electrico #separador img {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    top: -10%;
+    left: 0;
+    object-fit: cover;
+    object-position: bottom;
+    z-index: 1;
+}
+#brochure-distrito #separador .container,
+#brochure-electrico #separador .container {
+    position: relative;
+    z-index: 3;
+}
 /* LANDING FRANCISCO */
 
 
@@ -1009,19 +1056,22 @@ footer#footer-main .container {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+
 #brochure-francisco section#caracteristicas {
     min-height: 40rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#brochure-francisco section#caracteristicas:before {
+
+#brochure-francisco section#caracteristicas:before,
+#brochure-electrico #separador:before {
     content: "";
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-        z-index: 2;
+    z-index: 2;
     background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -1029,6 +1079,7 @@ section#caracteristicas .container {
     position: relative;
     z-index: 3;
 }
+
 #brochure-francisco #caracteristicas ul {
     color: #fff;
     font-size: var(--text-ml);
@@ -1111,17 +1162,37 @@ section#caracteristicas .container {
         --text-xxl: 1.8rem;
         --text-xxxl: 2rem;
         --text-xxxxl: 2.2rem;
-        ;
+
     }
 
     .desktop {
         display: none;
     }
 
+    #brochure-home section#hero:before {
+        height: 8rem;
+    }
+
+    #brochure-home #hero .top .container {
+        padding-top: 8rem;
+    }
+
+    #brochure-home #hero img.floating {
+        aspect-ratio: 16/9;
+        left: 5%;
+        bottom: 9rem;
+        width: 90%;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+
+        flex-direction: column;
+    }
     .box#buque-electrico {
         flex-direction: column;
     }
-
     .box#buque-electrico .text,
     .box#buque-electrico figure {
         width: 100%;
@@ -1134,6 +1205,11 @@ section#caracteristicas .container {
     .swiperFlota .swiper-slide .container {
         padding: 0;
         flex-direction: column;
+    }
+
+    #sustentable .navigation,
+    #flota .navigation {
+        display: none;
     }
 
     .swiperFlota .swiper-slide img {
@@ -1198,6 +1274,10 @@ section#caracteristicas .container {
         padding-bottom: 1.5rem;
         border-right: 0;
         border-bottom: solid 1px var(--color-2);
+    }
+
+    section#futuro .box {
+        padding: 1rem 2rem;
     }
 }
 
