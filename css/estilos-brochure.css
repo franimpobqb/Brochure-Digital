@@ -1219,18 +1219,23 @@ section#caracteristicas .container {
     }
 
     .swiperFlota .swiper-slide img {
-        position: relative;
+        position: relative; 
         width: 100%;
         height: 100%;
         margin: 0;
         aspect-ratio: 16/9;
         inset: inherit;
     }
-
+    .swiperFlota .swiper-slide {
+        background-color: var(--color-1);
+    }
     .swiperFlota .swiper-slide {
         aspect-ratio: auto;
     }
-
+    .swiperFlota .swiper-slide video {
+        position: relative;
+        aspect-ratio: 16/9;
+    }
     .swiperFlota .swiper-slide figure:after {
         content: none;
     }
