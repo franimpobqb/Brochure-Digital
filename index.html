@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brochure Digital</title>
+    <title>Construyendo futuro - Innovación sustentable / Buquebus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos-brochure.css">
@@ -164,7 +164,9 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="container">
-                            <figure><img src="images/francisco-1.webp" loading="lazy" />
+                            <figure><video  muted  looloading="lazy">
+                                <source src="videos/video-francisco.mp4" type="video/mp4" />
+                            </video>
                                 <div class="navigation">
                                     <div class="swiper-button-next flota-button-next"></div>
                                     <div class="swiper-button-prev flota-button-prev"></div>
@@ -228,8 +230,9 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="container">
-                            <figure><img src="images/silvia-ana-2.webp"
-                                    alt="Barco Silvia Ana L de Buquebus" />
+                            <figure>  <video  muted  looloading="lazy">
+                                <source src="videos/silvia-ana.mp4" type="video/mp4" />
+                            </video>
                                 <div class="navigation">
                                     <div class="swiper-button-next flota-button-next"></div>
                                     <div class="swiper-button-prev flota-button-prev"></div>
@@ -1452,6 +1455,43 @@
         });
     </script>
 
+<script>
+    // Get all the swiper slides and video elements
+    const swiperSlides = document.querySelectorAll('.swiper-slide');
+    const swiperVideos = document.querySelectorAll('.swiper-slide video');
+
+    // Intersection Observer options
+    const options = {
+      root: document.querySelector('.swiper-container'),
+      rootMargin: '0px',
+      threshold: 0.5, // When 50% of the video is visible, trigger the intersection
+    };
+
+    // Callback function to handle intersection events
+    function handleIntersection(entries) {
+      entries.forEach((entry) => {
+        const videoElement = entry.target.querySelector('video');
+        if (videoElement) {
+          // Check if slide contains a video element
+          if (entry.isIntersecting) {
+            // If slide is active, play the video
+            videoElement.play();
+          } else {
+            // If slide is not active, pause the video
+            videoElement.pause();
+          }
+        }
+      });
+    }
+
+    // Create the Intersection Observer instance
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    // Observe each swiper slide
+    swiperSlides.forEach((slide) => {
+      observer.observe(slide);
+    });
+  </script>
 </body>
 
 </html>
