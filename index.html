@@ -164,7 +164,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="container">
-                            <figure><video  muted  looloading="lazy">
+                            <figure><video  muted playsinline  loading="lazy">
                                 <source src="videos/video-francisco.mp4" type="video/mp4" />
                             </video>
                                 <div class="navigation">
@@ -201,7 +201,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="container">
-                            <figure><video  muted  looloading="lazy">
+                            <figure><video  muted playsinline  loading="lazy">
                                 <source src="videos/atlantic-iii.mp4" type="video/mp4" />
                             </video>
                                 <div class="navigation">
@@ -233,7 +233,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="container">
-                            <figure>  <video  muted  looloading="lazy">
+                            <figure>  <video  muted playsinline  loading="lazy">
                                 <source src="videos/silvia-ana.mp4" type="video/mp4" />
                             </video>
                                 <div class="navigation">
@@ -1338,7 +1338,7 @@
         });
         var swiperFlota = new Swiper(".swiperFlota", {
             spaceBetween: 10,
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             centeredSlides: true,
             navigation: {
                 nextEl: ".flota-button-next",
@@ -1350,8 +1350,8 @@
             breakpoints: {
 
                 768: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
+                    slidesPerView: 1.2,
+                    spaceBetween: 10,
                 },
                 1024: {
                     spaceBetween: 10,
